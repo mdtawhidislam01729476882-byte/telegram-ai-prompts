@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Prompt & Trending Photos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-white font-sans p-4">
+
+    <div class="max-w-md mx-auto">
+        <h1 class="text-2xl font-bold text-center mb-6 text-indigo-400">🔥 Trending AI Prompts</h1>
+
+        <!-- Image & Prompt Card -->
+        <div class="bg-slate-8 rounded-xl overflow-hidden shadow-lg border border-slate-700 mb-6">
+            <!-- AI Reference Image -->
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop" alt="AI Art" class="w-full h-64 object-cover">
+            
+            <div class="p-4">
+                <h2 class="text-sm font-semibold text-slate-400 mb-2">Prompt:</h2>
+                <!-- Prompt Text Box -->
+                <p id="promptText1" class="text-sm bg-slate-900 p-3 rounded-lg border border-slate-700 text-slate-300 mb-4">
+                    Cinematic 1980s retro style portrait of a futuristic cyberpunk warrior, neon lighting, highly detailed, 4k resolution.
+                </p>
+                
+                <!-- Copy Button -->
+                <button onclick="handleCopy('promptText1')" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2.5 px-4 rounded-lg transition duration-200 flex items-center justify-center gap-2">
+                    📋 Copy Prompt & View Ad
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // আপনার Monetag বা Adsterra এর Smart Link এখানে বসাবেন
+        const SMART_LINK_URL = "https://your-adsterra-or-monetag-link.com"; 
+
+        function handleCopy(elementId) {
+            const textToCopy = document.getElementById(elementId).innerText.trim();
+
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                alert("✅ Prompt successfully copied!");
+                
+                if (SMART_LINK_URL && SMART_LINK_URL !== "https://your-adsterra-or-monetag-link.com") {
+                    window.open(SMART_LINK_URL, '_blank');
+                }
+            }).catch(err => {
+                alert("কপি করতে সমস্যা হয়েছে, আবার চেষ্টা করুন।");
+                console.error('Copy failed: ', err);
+            });
+        }
+    </script>
+
+</body>
+                  </html>
